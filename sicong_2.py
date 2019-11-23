@@ -1,21 +1,23 @@
 import csv
 import numpy as np
 from sklearn.svm import SVC
-outp = 0
+
 with open('data.csv', mode='r') as data_file:
-    data_reader = csv.reader(data_file, delimiter=',', quotechar='\'', quoting=csv.QUOTE_NONNUMERIC)
+    data_reader = csv.reader(data_file, delimiter=',', quotechar='\'',quoting=csv.QUOTE_NONNUMERIC)
     outp = []
     for each in data_reader:
         outp.append(each)
     result = []
-    sample1 = [536.0,303.0,522.0,307.0,508.0,312.0,494.0,312.0,481.0,312.0,467.0,307.0]
-    # X = np.array(feature1)
-    print(X)
-    Y = np.array([1,1,0,1,1,1])
-    print(Y)
-    clf = SVC(gamma='auto')
-    clf.fit(X, Y) 
-    print(clf.predict([[-0.8, -1]]))
+
+
+# print(Y)
+# X = np.array(feature1)
+# print(X)
+# Y = np.array([1,1,0,1,1,1])
+# clf = SVC(gamma='auto')
+# clf.fit(X, Y)
+# print(clf.predict([[-0.8, -1]]))
+print(outp)
 
 
 '''
