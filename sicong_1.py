@@ -80,7 +80,7 @@ def get_img_data(path):
 with open('data.csv', mode='w') as data_file:
     data_writer = csv.writer(data_file, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
     # data_writer.writerow(['x_value', 'y_value'])
-    for i in range(13):
+    for i in range(17):
         if i < 10:
             path = 'pics/dimpler_0'+str(i)+'.png'
         else:
