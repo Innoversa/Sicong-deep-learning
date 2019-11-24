@@ -5,9 +5,9 @@ from sklearn.svm import SVC
 
 def feature1(input1):
     output = [0, 1, 2, 3]
-    output[0] = (input1[0][0] - input1[3][0])
+    # output[0] = (input1[0][0] - input1[3][0])
     output[1] = (input1[0][1] - input1[3][1])
-    output[2] = (input1[6][0] - input1[3][0])
+    # output[2] = (input1[6][0] - input1[3][0])
     output[3] = (input1[6][1] - input1[3][1])
     # output_val = output[0] + output[1] * 10 + output[2] * 100 + output[3] * 1000
     # return [output[1]-output[0], output[3]-output[2]]
@@ -42,19 +42,19 @@ with open('answer.csv', mode='r') as data_file:
     # print(ans)
 
 f1 = []
-for a in range(13):
-    # f1.append(feature1(outp[a*7:a*7+7]))
-    f1.append(feature2(outp[a * 7:a * 7 + 7]))
+for a in range(17):
+    f1.append(feature1(outp[a*7:a*7+7]))
+    # f1.append(feature2(outp[a * 7:a * 7 + 7]))
 print(f1)
 print(ans)
-X = np.array(f1[1:])
+X = np.array(f1[3:])
 print(X)
-Y = np.array(ans[1:])
+Y = np.array(ans[3:])
 print(Y)
 clf = SVC(gamma='auto')
 clf.fit(X, Y)
 # print(clf.predict([[-0.8, -1, -0.8, -1]]))
-print(clf.predict(f1[0:1]))
+print(clf.predict(f1[0:3]))
 
 '''
 from sklearn import svm
