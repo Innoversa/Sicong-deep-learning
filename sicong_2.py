@@ -65,16 +65,15 @@ Y = np.array(ans[6:13])
 # print(Y)
 acc = 0
 # f1_score = 0
-for i in range(1):
-    x_train, x_test, y_train, y_test = sklearn.model_selection.train_test_split(X, Y, test_size=0.5)
-    clf = SVC(gamma='auto', kernel='rbf')
+for i in range(10):
+    x_train, x_test, y_train, y_test = sklearn.model_selection.train_test_split(X, Y, test_size=0.3)
+    clf = SVC(gamma='auto')
     clf.fit(x_train, y_train)
     y_pred = clf.predict(x_test)
     # acc = sklearn.metrics.accuracy_score(y_test, y_pred)
-    acc = acc + sklearn.metrics.accuracy_score(y_test, y_pred)
+    print(sklearn.metrics.accuracy_score(y_test, y_pred))
     # f1_score = f1_score + sklearn.metrics.f1_score(y_test, y_pred, average='binary')
-print(acc)
-# print(f1_score / 10)
+    # print(f1_score / 10)
 
 # print(clf.predict([[-0.8, -1, -0.8, -1]]))
 # print(clf.predict(f1))
