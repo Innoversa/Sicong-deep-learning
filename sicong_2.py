@@ -10,17 +10,19 @@ def featureAll(input1):
     output += (feature3(input1))
     return output
 def feature1(input1):
+    # feature regarding lips
     output = [0, 1, 2, 3]
-    # output[0] = (input1[0][0] - input1[3][0])
+    output[0] = (input1[0][0] - input1[3][0])
     output[1] = (input1[0][1] - input1[3][1])
-    # output[2] = (input1[6][0] - input1[3][0])
+    output[2] = (input1[6][0] - input1[3][0])
     output[3] = (input1[6][1] - input1[3][1])
     # output_val = output[0] + output[1] * 10 + output[2] * 100 + output[3] * 1000
-    # return [output[1]-output[0], output[3]-output[2]]
-    return output
+    return [output[1]-output[0], output[3]-output[2]]
+    # return output
 
 
 def feature2(input1):
+    # feature regarding lips
     output = [0, 1, 2, 3, 4, 5, 6]
     output[0] = input1[0][1]
     output[1] = input1[1][1]
@@ -33,6 +35,7 @@ def feature2(input1):
 
 
 def feature3(input1):
+    # feature regarding lips
     output = [0, 1, 2, 3, 4, 5]
     output[0] = input1[0][0]
     output[1] = input1[0][1]

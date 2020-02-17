@@ -6,6 +6,7 @@ from mpl_toolkits.mplot3d import Axes3D
 from skimage import io
 import collections
 import csv
+import numpy
 
 def get_img_data(path):
     # Run the 3D face alignment on a test image, without CUDA.
@@ -34,10 +35,16 @@ def get_img_data(path):
     #             'lips': pred_type(slice(48, 60), (0.596, 0.875, 0.541, 0.3)),
     #             'teeth': pred_type(slice(60, 68), (0.596, 0.875, 0.541, 0.4))
     #             }
-    pred_types = {'lips': pred_type(slice(54, 60), (0.596, 0.875, 0.541, 0.3))}
-    # print(preds['lips'].slice)
+    pred_types = {'lips': pred_type(slice(54, 60), (0.596, 0.875, 0.541, 0.3)),
+                  'eyebrow1': pred_type(slice(17, 22), (1.0, 0.498, 0.055, 0.4)),
+                  'eyebrow2': pred_type(slice(22, 27), (1.0, 0.498, 0.055, 0.4))}
+    # print(preds[pred_types.slice, 0:2])
+    # input("hello")
+    # print(preds['eyebrow'].slice)
     # lips = slice(52, 60)
-    data = preds[pred_types['lips'].slice, 0:2]
+    # data = preds[pred_types['lips'].slice, 0:2]
+    data = numpy.concatenate((preds[pred_types['lips'].slice, 0:2], preds[pred_types['eyebrow1'].slice, 0:2], preds[pred_types['eyebrow2'].slice, 0:2]))
+
 
     # fig = plt.figure(figsize=plt.figaspect(.5))
     # ax = fig.add_subplot(1, 2, 1)
