@@ -3,7 +3,12 @@ import numpy as np
 from sklearn.svm import SVC
 import sklearn
 
-
+def featureAll(input1):
+    output = []
+    output += (feature1(input1))
+    output += (feature2(input1))
+    output += (feature3(input1))
+    return output
 def feature1(input1):
     output = [0, 1, 2, 3]
     # output[0] = (input1[0][0] - input1[3][0])
@@ -43,7 +48,7 @@ with open('data.csv', mode='r') as data_file:
     outp = []
     for each in data_reader:
         outp.append(each)
-    # print(outp[0:7])
+    print(outp)
 
 with open('answer.csv', mode='r') as data_file:
     data_reader = csv.reader(data_file, quoting=csv.QUOTE_NONNUMERIC)
@@ -55,25 +60,28 @@ with open('answer.csv', mode='r') as data_file:
 
 f1 = []
 for a in range(17):
-    f1.append(feature3(outp[a * 7:a * 7 + 7]))
-
-# print(f1)
+    # f1.append(feature3(outp[a * 7:a * 7 + 7]))
+    f1.append(featureAll(outp))
+    # f1.append(feature3(outp))
+print('printing', f1)
 # print(ans)
-X = np.array(f1[6:13])
+X = np.array(f1)
 # print(X)
-Y = np.array(ans[6:13])
+Y = np.array(ans)
 # print(Y)
 acc = 0
-# f1_score = 0
-for i in range(10):
-    x_train, x_test, y_train, y_test = sklearn.model_selection.train_test_split(X, Y, test_size=0.3)
+f1_score = 0
+
+for i in range(10000):
+    x_train, x_test, y_train, y_test = sklearn.model_selection.train_test_split(X, Y)
     clf = SVC(gamma='auto')
     clf.fit(x_train, y_train)
     y_pred = clf.predict(x_test)
-    # acc = sklearn.metrics.accuracy_score(y_test, y_pred)
-    print(sklearn.metrics.accuracy_score(y_test, y_pred))
+    acc = acc + sklearn.metrics.accuracy_score(y_test, y_pred)
+    # print(sklearn.metrics.accuracy_score(y_test, y_pred))
     # f1_score = f1_score + sklearn.metrics.f1_score(y_test, y_pred, average='binary')
-    # print(f1_score / 10)
+# print(f1_score / 100)
+print(acc / 10000)
 
 # print(clf.predict([[-0.8, -1, -0.8, -1]]))
 # print(clf.predict(f1))

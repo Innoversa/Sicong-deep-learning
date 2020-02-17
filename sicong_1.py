@@ -34,7 +34,7 @@ def get_img_data(path):
     #             'lips': pred_type(slice(48, 60), (0.596, 0.875, 0.541, 0.3)),
     #             'teeth': pred_type(slice(60, 68), (0.596, 0.875, 0.541, 0.4))
     #             }
-    pred_types = {'lips': pred_type(slice(54, 61), (0.596, 0.875, 0.541, 0.3))}
+    pred_types = {'lips': pred_type(slice(54, 60), (0.596, 0.875, 0.541, 0.3))}
     # print(preds['lips'].slice)
     # lips = slice(52, 60)
     data = preds[pred_types['lips'].slice, 0:2]
@@ -50,9 +50,9 @@ def get_img_data(path):
     #             color=pred_type.color, **plot_style)
     #
     # ax.axis('off')
-
-    # 3D-Plot
-
+    #
+    # # 3D-Plot
+    #
     # ax = fig.add_subplot(1, 2, 2, projection='3d')
     # surf = ax.scatter(preds[:, 0] * 1.2,
     #                 preds[:, 1],
@@ -68,7 +68,7 @@ def get_img_data(path):
     #
     # ax.view_init(elev=90., azim=90.)
     # ax.set_xlim(ax.get_xlim()[::-1])
-    # plt.show()
+    # # plt.show()
     # plt.savefig("sample.jpg")
     return data
 
@@ -88,7 +88,6 @@ with open('data.csv', mode='w') as data_file:
         print(path)
         data = get_img_data(path)
         data_writer.writerows(data)
-
 
 
 #pic1.jpg pic2.jpg....
