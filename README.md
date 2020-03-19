@@ -26,3 +26,6 @@ python3 sicong_3.py
 ## Demo
 https://youtu.be/JDaMm2D2N4w
 
+## Issues
+Currently cannot display results in realtime (have to process the image then get answer from from bash
+
