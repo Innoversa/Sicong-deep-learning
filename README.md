@@ -11,6 +11,11 @@ json_datas/ directory == key points for each pictures
 json_datas/ans_all_15_images.csv == key for the supervised training
 json_datas/input_all_15_images.csv == processed data
 
+## Videos 
+
+go to /my_videos directory\
+To view rendered videos, go to /output/result_vid_1.avi\
+To view Jason data vs keypoints vs time, please view /output/vid_1 directory
 
 ## Usage
 
@@ -18,4 +23,5 @@ All the related code is stored in the sicong_3.py in the root directory
 ```bash
 python3 sicong_3.py
 ```
+
 
