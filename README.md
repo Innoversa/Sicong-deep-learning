@@ -1,4 +1,4 @@
-# Introduction
+## Introduction
 
 The purpose of this project is to detect whether the person in an image is looking at the cell phone or not
 
