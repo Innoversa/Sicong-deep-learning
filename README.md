@@ -19,7 +19,7 @@ To view Jason data vs keypoints vs time, please view /output/vid_1 directory
 
 ## Usage
 
-All the related code is stored in the sicong_3.py in the root directory 
+All the related code is stored in the sicong_4.py in the root directory 
 ```bash
 python3 sicong_4.py
 ```
