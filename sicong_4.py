@@ -29,11 +29,11 @@ with open('my_pics/json_datas/input_all_15_images.csv', mode='r') as data_file:
         # print(each)
         all_pts.append(each)
 # print('output is ', all_pts) # all points is a 2D array with 15 rows and 75 columns
+# this modifies the list into a 15 rows and 50 columns 2D array that has only x and y coordinates
 for each in all_pts:
     for pts in each:
         if pts <= 1:
             each.remove(pts)
-# this modifies the list into a 15 rows and 50 columns 2D array that has only x and y coordinates
 # data I need is neck (1), Relbow(3), Rwrist(4), Lelbow(6), Lwrist(7), Reye(15), Leye(16)
 need_features = [1, 3, 4, 6, 7, 15, 16]
 need_idx = []
