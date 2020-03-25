@@ -1,1 +1,1 @@
-with open('')
+print("I'm master's slave")
