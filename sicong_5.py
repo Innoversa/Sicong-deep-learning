@@ -76,8 +76,10 @@ def do_deep_learning(in_dig):
     X = np.array(feature_1)
     Y = np.array(ans_data)
     clf = calc_accuracy(X, Y)
-    dec_func_ans = clf.decision_function(X)
-    # print(dec_func_ans)
+    # dec_func_ans = clf.decision_function(X)
+    dec_func_ans = clf.predict(X)
+    dec_func_ans = dec_func_ans.tolist()
+    print(dec_func_ans)
     # for each in dec_func_ans:
     #     if each < 0:
     #         each = 1 + each
