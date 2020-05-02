@@ -77,7 +77,7 @@ def featureAll(input1):
     # input("hello")
     output = []
     output += (feature1(input1))
-    # output += (feature2(input1))
+    # visual_trend += (feature2(input1))
     output += (feature3(input1))
     output += feature4(input1[7::])
     return output
@@ -90,9 +90,9 @@ def feature1(input1):
     output[1] = (input1[0][1] - input1[3][1])
     output[2] = (input1[6][0] - input1[3][0])
     output[3] = (input1[6][1] - input1[3][1])
-    # output_val = output[0] + output[1] * 10 + output[2] * 100 + output[3] * 1000
+    # output_val = visual_trend[0] + visual_trend[1] * 10 + visual_trend[2] * 100 + visual_trend[3] * 1000
     return [output[1]-output[0], output[3]-output[2]]
-    # return output
+    # return visual_trend
 
 
 def feature2(input1):

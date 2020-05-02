@@ -16,19 +16,19 @@ def feature_look_down_1(input_pts, input_index):
 
 
 # start of data processing part
-with open('my_pics/json_datas/ans_all_15_images.csv', mode = 'r') as data_file:
+with open('image_dir/json_datas/ans_all_15_images.csv', mode ='r') as data_file:
     data_reader = csv.reader(data_file, delimiter=',', quotechar='\'', quoting=csv.QUOTE_NONNUMERIC)
     ans_data = []
     for each in data_reader:
         ans_data = each
     ans_data = list(map(int, ans_data))
-with open('my_pics/json_datas/input_all_15_images.csv', mode='r') as data_file:
+with open('image_dir/json_datas/input_all_15_images.csv', mode='r') as data_file:
     data_reader = csv.reader(data_file, delimiter=',', quotechar='\'', quoting=csv.QUOTE_NONNUMERIC)
     all_pts = []
     for each in data_reader:
         # print(each)
         all_pts.append(each)
-# print('output is ', all_pts) # all points is a 2D array with 15 rows and 75 columns
+# print('visual_trend is ', all_pts) # all points is a 2D array with 15 rows and 75 columns
 # this modifies the list into a 15 rows and 50 columns 2D array that has only x and y coordinates
 for each in all_pts:
     for pts in each:

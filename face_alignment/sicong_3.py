@@ -48,7 +48,7 @@ def feature_all(input1):
     output = []
     output += feature_1_raised_eyebrow(input1)
     output += feature_2_dimpler(input1)
-    # output += sicong_func.featureAll(input1)
+    # visual_trend += sicong_func.featureAll(input1)
     return output
 
 

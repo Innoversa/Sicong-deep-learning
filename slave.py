@@ -2,7 +2,7 @@ import matplotlib.pyplot as plt
 import json
 
 def input_data(in_dig):
-    json_var = 'my_videos/output/avi_'+str(in_dig)+'/avi_'+str(in_dig)+'_json_out.json'
+    json_var = 'video_dir_1/visual_trend/avi_'+str(in_dig)+'/avi_'+str(in_dig)+'_json_out.json'
     with open(json_var, 'r') as data_reader:
         asd = json.loads(data_reader.read())
     return asd['head down']
@@ -35,5 +35,5 @@ for i in range(len(avi)):
         Y.append(each[1])
     plt.plot(X, Y)
     # plt.show()
-    plt.savefig(fname='my_videos/output/fig_trend_of_avi_'+str(i+1)+'.PNG')
+    plt.savefig(fname='video_dir_1/visual_trend/fig_trend_of_avi_'+str(i+1)+'.PNG')
     plt.close()

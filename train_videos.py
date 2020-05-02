@@ -35,8 +35,8 @@ def calc_accuracy(X, Y):
 
 # start of data processing part
 def input_data(in_dig):
-    pts_var = 'my_videos/output/avi_'+str(in_dig)+'/avi_'+str(in_dig)+'_pts.csv'
-    ans_var = 'my_videos/output/avi_'+str(in_dig)+'/avi_'+str(in_dig)+'_ans.csv'
+    pts_var = 'video_dir_1/visual_trend/avi_'+str(in_dig)+'/avi_'+str(in_dig)+'_pts.csv'
+    ans_var = 'video_dir_1/visual_trend/avi_'+str(in_dig)+'/avi_'+str(in_dig)+'_ans.csv'
     with open(pts_var, mode='r') as data_file:
         data_reader = csv.reader(data_file, delimiter=',', quotechar='\'', quoting=csv.QUOTE_NONNUMERIC)
         all_pts = []
@@ -84,14 +84,14 @@ def do_deep_learning(in_dig):
     #     if each < 0:
     #         each = 1 + each
     # print (dec_func_ans)
-    # initializing json output for Dr. Jiang's required format
+    # initializing json visual_trend for Dr. Jiang's required format
     dict_to_json = {}
     dict_list = []
     for i in range(len(dec_func_ans)):
         dict_list.append([i * 5, dec_func_ans[i]])
     dict_to_json['head down'] = dict_list
     print(dict_to_json)
-    out_var = 'my_videos/output/avi_'+str(in_dig)+'/avi_'+str(in_dig)+'_json_out.json'
+    out_var = 'video_dir_1/visual_trend/avi_'+str(in_dig)+'/avi_'+str(in_dig)+'_json_out.json'
     with open(out_var, 'w+') as outfile:
         json.dump(dict_to_json, outfile)
     print('\n\n end of ', in_dig)
