@@ -23,5 +23,7 @@ def func_process_json_input(digit):
     # for each in ans_of_it:
     #     print(each)
     data_writer.writerows(ans_of_it)
+
+    
 for each in range(20):
     func_process_json_input(each+1)
