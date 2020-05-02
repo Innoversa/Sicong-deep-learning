@@ -15,7 +15,7 @@ def func_process_json_input(digit):
             # print(data['people'][0]['pose_keypoints_2d']) # extracts useful json data
             ans_of_it.append(data['people'][0]['pose_keypoints_2d'])
 
-    # print(ans_of_it)
+    print(ans_of_it)
     print(len(ans_of_it), len(ans_of_it[0]))
 
     data_writer = csv.writer(open('video_dir_2\\data_src\\may_'+digit+'\\may_'+digit+'_pts.csv', 'w+', newline=""),
@@ -23,12 +23,7 @@ def func_process_json_input(digit):
     # for each in ans_of_it:
     #     print(each)
     data_writer.writerows(ans_of_it)
-    # data_reader = csv.reader(open('video_dir_2\\data_src\\may_'+digit+'\\may_'+digit+'_ans.csv', newline=""))
-    # for each in data_reader:
-    #     # print(each)
-    #     print(len(each))
-    #     if len(each) == len(ans_of_it):
-    #         print('hahahaha')
+
 
 for each in range(20):
     func_process_json_input(each+1)
