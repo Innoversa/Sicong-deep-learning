@@ -2,7 +2,8 @@ import matplotlib.pyplot as plt
 import json
 
 def input_data(in_dig):
-    json_var = 'video_dir_1/visual_trend/avi_'+str(in_dig)+'/avi_'+str(in_dig)+'_json_out.json'
+    # json_var = 'video_dir_1/visual_trend/avi_'+str(in_dig)+'/avi_'+str(in_dig)+'_json_out.json'
+    json_var = 'video_dir_2/data_src/may_' + str(in_dig) + '/may_' + str(in_dig) + '_json_out.json'
     with open(json_var, 'r') as data_reader:
         asd = json.loads(data_reader.read())
     return asd['head down']
@@ -18,22 +19,25 @@ def input_data(in_dig):
 # avi.append([[0, 0.4166029260651653], [5, -0.5833970738793297], [10, -0.5833970738793297], [15, -0.5833970738793297], [20, 1.0006428641418768], [25, 0.9996778000081741], [30, 0.9996784281862685], [35, 0.9996793135626902], [40, 0.9996790504235409], [45, 0.9996784281862685], [50, 0.41660292612067024], [55, -0.5834611490532478], [60, -0.5834611490532478], [65, 0.41660292612067024], [70, -0.5833970738793297], [75, 0.41660292612067024], [80, 1.0006428641418768], [85, 0.9996777993144113], [90, 0.9996793135598097], [95, 0.4499487386298516], [100, 0.41660293327071224], [105, 1.000642845898938], [110, 1.0006428643956904], [115, 0.9996784281862681], [120, 0.41660292612067024], [125, -0.5833970738793297]])
 
 avi = []
-for i in range(8):
-    avi.append(input_data(i+1))
 
+# for i in range(1):
+#     avi.append(input_data(i+1))
+print(input_data(7))
 # for i in avi:
 #     for j in i:
 #         if j[1] < 0:
 #             j[1] = 0 - j[1]
 
-for i in range(len(avi)):
-# lines = avi[7]
-    X = []
-    Y = []
-    for each in avi[i]:
-        X.append(each[0])
-        Y.append(each[1])
-    plt.plot(X, Y)
-    # plt.show()
-    plt.savefig(fname='video_dir_1/visual_trend/fig_trend_of_avi_'+str(i+1)+'.PNG')
-    plt.close()
+# for i in range(len(avi)):
+# # lines = avi[7]
+#     X = []
+#     Y = []
+#     for each in avi[i]:
+#         print(each)
+#         X.append(each[0])
+#         Y.append(each[1])
+#         plt.plot(X, Y)
+#         # plt.show()
+#         # plt.savefig(fname='video_dir_1/visual_trend/fig_trend_of_avi_'+str(i+1)+'.PNG')
+#         plt.savefig(fname='video_dir_2/visual_trend/fig_trend_of_may_'+str(i+1)+'.PNG')
+#         plt.close()
